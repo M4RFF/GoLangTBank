@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 package Homework01
 
 func main() {
@@ -93,4 +94,11 @@ func main() {
 		fmt.Println(fizzbuzz.FizzBuzz(i))
 	}
 >>>>>>> 588f809 (practical part form the 2nd course lecture 1)
+=======
+package Homework01
+
+func main() {
+	// TODO тут напишите цикл с вызовом FizzBuzz
+	// fmt.Println(fizzbuzz.FizzBuzz(10))
+>>>>>>> 5312f43 (I solved the 1st hw, but I've not realized how to add color there)
 }
