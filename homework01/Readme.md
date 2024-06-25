@@ -15,3 +15,4 @@ cd lesson1/homework
 Запустить приложение
 
 GO111MODULE=on go run main.go  
+
