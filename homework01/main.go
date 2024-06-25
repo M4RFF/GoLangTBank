@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package Homework01
 
 func main() {
@@ -68,4 +69,11 @@ func twoDiagonals(s string) {
 		fmt.Println() // moves to the next line at the end of the rows
 	}
 >>>>>>> 6f8c6c7 (Prep for the 1st homework from the second course)
+=======
+package Homework01
+
+func main() {
+	// TODO тут напишите цикл с вызовом FizzBuzz
+	// fmt.Println(fizzbuzz.FizzBuzz(10))
+>>>>>>> 12c2a32 (Prep for the 1st homework from the second course)
 }
