@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 package Homework01
 
 func main() {
@@ -135,4 +136,11 @@ func main() {
 >>>>>>> 57f9393 (Prep for the 1st homework from the second course)
 =======
 >>>>>>> 0bda93f (Prep for the 1st homework from the second course)
+=======
+package Homework01
+
+func main() {
+	// TODO тут напишите цикл с вызовом FizzBuzz
+	// fmt.Println(fizzbuzz.FizzBuzz(10))
+>>>>>>> 884bd83 (practical part form the 2nd course lecture 1)
 }
