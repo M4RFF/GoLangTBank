@@ -8,13 +8,15 @@ require github.com/stretchr/testify v1.9.0
 =======
 >>>>>>> 6f8c6c7 (Prep for the 1st homework from the second course)
 
-require github.com/stretchr/testify v1.9.0
-
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	github.com/stretchr/testify v1.9.0 // indirect
+>>>>>>> ebed57b (Preparation for the 1st homework from the second course)
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 =======
