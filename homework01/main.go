@@ -1,6 +1,15 @@
-package Homework01
+package main
+
+import (
+	"fmt"
+	"lecture01_homework/fizzbuzz"
+)
 
 func main() {
-	// TODO тут напишите цикл с вызовом FizzBuzz
-	// fmt.Println(fizzbuzz.FizzBuzz(10))
+	nums := make([]int, 100)
+
+	// we are ranging numbers
+	for i := range nums {
+		fmt.Println(fizzbuzz.FizzBuzz(i))
+	}
 }
