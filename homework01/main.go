@@ -6,10 +6,7 @@ import (
 )
 
 func main() {
-	nums := make([]int, 100)
-
-	// we are ranging numbers
-	for i := range nums {
+	for i := 0; i < 100; i++ {
 		fmt.Println(fizzbuzz.FizzBuzz(i))
 	}
 }
