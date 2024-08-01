@@ -2,6 +2,7 @@ package fizzbuzz
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 func FizzBuzz(i int) string {
 	// TODO
 	return ""
@@ -11,6 +12,8 @@ func FizzBuzz(i int) string {
 >>>>>>> c57f921 (Preparation for the 1st homework from the second course)
 =======
 
+=======
+>>>>>>> 85db6ff935e7e2b8d565381c2227c362b806289f
 import "fmt"
 
 func FizzBuzz(i int) string {
@@ -33,7 +36,10 @@ func FizzBuzz(i int) string {
 		fmt.Println(i)
 	}
 	return ""
+<<<<<<< HEAD
 =======
 >>>>>>> ebed57b (Preparation for the 1st homework from the second course)
+=======
+>>>>>>> 85db6ff935e7e2b8d565381c2227c362b806289f
 }
 >>>>>>> 6f8c6c7 (Prep for the 1st homework from the second course)
