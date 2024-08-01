@@ -12,5 +12,4 @@ func main() {
 	for i := range nums {
 		fmt.Println(fizzbuzz.FizzBuzz(i))
 	}
->>>>>>> 588f809 (practical part form the 2nd course lecture 1)
 }
