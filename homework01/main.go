@@ -1,6 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 package Homework01
 
 func main() {
@@ -31,6 +36,58 @@ import (
 type Mod func(s string) string
 
 func main() {
+=======
+package main
+
+// type Smth func(s string) string
+
+// func main() {
+// 	s := suf("Нет!")
+// 	println(s("да"))
+// 	println(s("Да"))
+// }
+
+// func suf(suf string) func(s string) string {
+// 	return func(s string) string {
+// 		return s + suf
+// 	}
+// }
+
+import (
+	"fmt"
+	"strings"
+)
+
+type Mod func(s string) string
+
+func main() {
+>>>>>>> 0bda93f (Prep for the 1st homework from the second course)
+=======
+package main
+
+// type Smth func(s string) string
+
+// func main() {
+// 	s := suf("Нет!")
+// 	println(s("да"))
+// 	println(s("Да"))
+// }
+
+// func suf(suf string) func(s string) string {
+// 	return func(s string) string {
+// 		return s + suf
+// 	}
+// }
+
+import (
+	"fmt"
+	"strings"
+)
+
+type Mod func(s string) string
+
+func main() {
+>>>>>>> d78a737 (Prep for the 1st homework from the second course)
 	variable := "X"
 	fmt.Println(applyer(variable, IncreasingValue))
 	twoDiagonals(variable)
@@ -69,6 +126,8 @@ func twoDiagonals(s string) {
 		}
 		fmt.Println() // moves to the next line at the end of the rows
 	}
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6f8c6c7 (Prep for the 1st homework from the second course)
 =======
 package Homework01
@@ -93,4 +152,25 @@ func main() {
 		fmt.Println(fizzbuzz.FizzBuzz(i))
 	}
 >>>>>>> 588f809 (practical part form the 2nd course lecture 1)
+=======
+package Homework01
+
+func main() {
+	// TODO тут напишите цикл с вызовом FizzBuzz
+	// fmt.Println(fizzbuzz.FizzBuzz(10))
+>>>>>>> 5312f43 (I solved the 1st hw, but I've not realized how to add color there)
+=======
+func main() {
+>>>>>>> 57f9393 (Prep for the 1st homework from the second course)
+=======
+>>>>>>> 0bda93f (Prep for the 1st homework from the second course)
+=======
+package Homework01
+
+func main() {
+	// TODO тут напишите цикл с вызовом FizzBuzz
+	// fmt.Println(fizzbuzz.FizzBuzz(10))
+>>>>>>> 884bd83 (practical part form the 2nd course lecture 1)
+=======
+>>>>>>> d78a737 (Prep for the 1st homework from the second course)
 }
