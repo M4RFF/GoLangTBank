@@ -1,7 +1,7 @@
 package tagcloud
 
 import (
-	"sort"
+	"slices"
 	"strings"
 )
 
@@ -38,12 +38,21 @@ func (tgs *TagCloud) TopN(n int) []TagStat {
 	tagStats := make([]TagStat, 0, len(tgs.tags)) // create tagStats which collects tags
 
 	for tag, count := range tgs.tags {
-		tagStats = append(tagStats, TagStat{tag, count}) // add each Tag and his Count
+		tagStats = append(tagStats, TagStat{
+			Tag:             tag,
+			OccurrenceCount: count,
+		}) // add each Tag and his Count
 	}
 
 	// sort by descending frequency of tag use
-	sort.Slice(tagStats, func(i, j int) bool {
-		return tagStats[i].OccurrenceCount > tagStats[j].OccurrenceCount
+	slices.SortFunc(tagStats, func(a, b TagStat) int {
+		if a.OccurrenceCount > b.OccurrenceCount {
+			return -1
+		}
+		if a.OccurrenceCount < b.OccurrenceCount {
+			return 1
+		}
+		return 0
 	})
 
 	if n > len(tagStats) { // if n greater than number of tags
