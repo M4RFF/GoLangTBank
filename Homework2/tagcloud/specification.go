@@ -1,13 +1,10 @@
 package tagcloud
 
-import (
-	"slices"
-	"strings"
-)
+import "sort"
 
 // TagCloud aggregates statistics about used tags
 type TagCloud struct {
-	tags map[string]int // cloud of tags
+	tags map[string]int
 }
 
 // TagStat represents statistics regarding single tag
@@ -17,47 +14,40 @@ type TagStat struct {
 }
 
 // New should create a valid TagCloud instance
-// Pointer returns
 func New() *TagCloud {
-	return &TagCloud{make(map[string]int)} // creat a new cloud of tags
+	return &TagCloud{
+		tags: make(map[string]int),
+	}
 }
 
 // AddTag should add a tag to the cloud if it wasn't present and increase tag occurrence count
 // thread-safety is not needed
-func (tgs *TagCloud) AddTag(tag string) {
-	tag = strings.ToLower(tag) // add tag to a cloud
-	tgs.tags[tag]++            // increase tag occurrence count
+func (tc *TagCloud) AddTag(tag string) {
+	tc.tags[tag]++
 }
 
 // TopN should return top N most frequent tags ordered in descending order by occurrence count
-// if there are multiple TAGS with the same occurrence COUNT then the order is defined by implementation
+// if there are multiple tags with the same occurrence count then the order is defined by implementation
 // if n is greater that TagCloud size then all elements should be returned
 // thread-safety is not needed
 // there are no restrictions on time complexity
-func (tgs *TagCloud) TopN(n int) []TagStat {
-	tagStats := make([]TagStat, 0, len(tgs.tags)) // create tagStats which collects tags
+func (tc *TagCloud) TopN(n int) []TagStat {
 
-	for tag, count := range tgs.tags {
-		tagStats = append(tagStats, TagStat{
-			Tag:             tag,
-			OccurrenceCount: count,
-		}) // add each Tag and his Count
+	// create a slice which holds tag statistics
+	var stats []TagStat
+	for tag, count := range tc.tags {
+		stats = append(stats, TagStat{tag, count})
 	}
 
-	// sort by descending frequency of tag use
-	slices.SortFunc(tagStats, func(a, b TagStat) int {
-		if a.OccurrenceCount > b.OccurrenceCount {
-			return -1
-		}
-		if a.OccurrenceCount < b.OccurrenceCount {
-			return 1
-		}
-		return 0
+	// sort the slice by occurrence count in descending order
+	sort.Slice(stats, func(i, j int) bool {
+		return stats[i].OccurrenceCount > stats[j].OccurrenceCount
 	})
 
-	if n > len(tagStats) { // if n greater than number of tags
-		return tagStats // i return all elements from tagStats
+	// return the Top N element or if n is greater than TagCloud size then return all elements
+	if n > len(stats) {
+		return stats
 	}
 
-	return tagStats[:n] // return first n elements from tagStats
+	return stats[:n]
 }
