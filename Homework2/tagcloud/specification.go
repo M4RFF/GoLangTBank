@@ -1,5 +1,7 @@
 package tagcloud
 
+import "sort"
+
 // TagCloud aggregates statistics about used tags
 type TagCloud struct {
 	tags map[string]int
@@ -13,13 +15,15 @@ type TagStat struct {
 
 // New should create a valid TagCloud instance
 func New() *TagCloud {
-	return &TagCloud{tags: make(map[string]int)}
+	return &TagCloud{
+		tags: make(map[string]int),
+	}
 }
 
 // AddTag should add a tag to the cloud if it wasn't present and increase tag occurrence count
 // thread-safety is not needed
-func (tagCloud *TagCloud) AddTag(tag string) {
-	tagCloud.tags[tag]++
+func (tc *TagCloud) AddTag(tag string) {
+	tc.tags[tag]++
 }
 
 // TopN should return top N most frequent tags ordered in descending order by occurrence count
@@ -27,7 +31,23 @@ func (tagCloud *TagCloud) AddTag(tag string) {
 // if n is greater that TagCloud size then all elements should be returned
 // thread-safety is not needed
 // there are no restrictions on time complexity
-func (tagCloud *TagCloud) TopN(n int) []TagStat {
+func (tc *TagCloud) TopN(n int) []TagStat {
 
-	return nil
+	// create a slice which holds tag statistics
+	var stats []TagStat
+	for tag, count := range tc.tags {
+		stats = append(stats, TagStat{tag, count})
+	}
+
+	// sort the slice by occurrence count in descending order
+	sort.Slice(stats, func(i, j int) bool {
+		return stats[i].OccurrenceCount > stats[j].OccurrenceCount
+	})
+
+	// return the Top N element or if n is greater than TagCloud size then return all elements
+	if n > len(stats) {
+		return stats
+	}
+
+	return stats[:n]
 }
